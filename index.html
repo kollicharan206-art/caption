@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0
+    <title>K. Devi Charan | Genetic Engineering Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f8f6;
+            color: #1f2933;
+            line-height: 1.6;
+        }
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 8%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #16805c;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+        nav ul li a:hover {
+            color: #16805c;
+        }
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+            background: linear-gradient(135deg, #e8fff5, #ffffff);
+        }
+        .hero-content {
+            max-width: 850px;
+        }
+        .hero h1 {
+            font-size: 55px;
+            color: #12372a;
+            margin-bottom: 15px;
+        }
+        .hero h1 span {
+            color: #16805c;
+        }
+        .hero h2 {
+            font-size: 25px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #666;
+            font-size: 18px;
+        }
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            margin: 8px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .primary {
+            background: #16805c;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #0d6044;
+            transform: translateY(-3px);
+        }
+
+        .secondary {
+            border: 2px solid #16805c;
+            color: #16805c;
+        }
+
+        .secondary:hover {
+            background: #16805c;
+            color: white;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            color: #12372a;
+        }
+
+        .section-title p {
+            color: #777;
+            margin-top: 8px;
+        }
+
+        /* ABOUT */
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card h3 {
+            color: #16805c;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+        /* SKILLS */
+        .skills-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .skill {
+            margin-bottom: 20px;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background: #dce8e3;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: #16805c;
+            border-radius: 20px;
+        }
+
+        /* PROJECTS */
+        .project {
+            background: white;
+            border-left: 5px solid #16805c;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .project h3 {
+            color: #12372a;
+            margin-bottom: 8px;
+        }
+
+        /* EDUCATION */
+        .education {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .education-item {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .education-item h3 {
+            color: #16805c;
+        }
+
+        /* CONTACT */
+        .contact {
+            text-align: center;
+            background: #12372a;
+            color: white;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact p {
+            margin: 10px 0;
+        }
+
+        .contact a {
+            color: #8ff0c8;
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0b241a;
+            color: white;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">KDC.</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#interests">Interests</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>Hello, I'm <span>K. Devi Charan</span></h1>
+
+            <h2>Aspiring Genetic Engineering & Biotechnology Student</h2>
+
+            <p>
+                Passionate about genetics, biotechnology, molecular biology,
+                scientific research and emerging technologies that can create
+                meaningful solutions in healthcare and agriculture.
+            </p>
+
+            <div class="buttons">
+                <a href="#about" class="btn primary">Explore My Portfolio</a>
+                <a href="#contact" class="btn secondary">Contact Me</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>My academic and professional interests</p>
+        </div>
+
+        <div class="about">
+
+            <p>
+                I am K. Devi Charan, an undergraduate student with a strong
+                interest in Genetic Engineering and Biotechnology. I am
+                interested in understanding genes, DNA, molecular biology,
+                genetic technologies and laboratory-based research.
+            </p>
+
+            <br>
+
+            <p>
+                My goal is to develop strong scientific knowledge and practical
+                laboratory skills and eventually contribute to innovative
+                research in healthcare, agriculture and biotechnology.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTERESTS -->
+    <section id="interests">
+
+        <div class="section-title">
+            <h2>Areas of Interest</h2>
+            <p>Fields I am interested in exploring</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>🧬 Genetic Engineering</h3>
+                <p>
+                    Gene editing, recombinant DNA technology, gene cloning
+                    and genetic modification.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🔬 Molecular Biology</h3>
+                <p>
+                    DNA, RNA, proteins, molecular mechanisms and biological
+                    processes.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🧪 Biotechnology</h3>
+                <p>
+                    Applications of biological science in healthcare,
+                    agriculture and industrial biotechnology.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🧫 Microbiology</h3>
+                <p>
+                    Understanding microorganisms and their applications
+                    in biotechnology.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🧬 Gene Therapy</h3>
+                <p>
+                    Exploring the use of genetic technologies for potential
+                    medical applications.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🌱 Agricultural Biotechnology</h3>
+                <p>
+                    Exploring genetic technologies for improving crops,
+                    productivity and agricultural sustainability.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+
+        <div class="section-title">
+            <h2>Skills</h2>
+            <p>Scientific and professional skills</p>
+        </div>
+
+        <div class="skills-container">
+
+            <div class="skill">
+                <div class="skill-name">
+                    <span>Scientific Research</span>
+                    <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width:85%"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <span>Scientific Documentation</span>
+                    <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width:85%"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <span>Laboratory Awareness</span>
+                    <span>75%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width:75%"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <span>Communication</span>
+                    <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width:85%"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <span>Teamwork</span>
+                    <span>90%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width:90%"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects">
+
+        <div class="section-title">
+            <h2>Projects & Research Interests</h2>
+            <p>Academic projects and future research areas</p>
+        </div>
+
+        <div class="project">
+
+            <h3>🧬 Genetic Engineering Research Study</h3>
+
+            <p>
+                A study focused on understanding recombinant DNA technology,
+                gene cloning, genetic modification and modern genetic
+                engineering techniques.
+            </p>
+
+        </div>
+
+        <div class="project">
+
+            <h3>🌱 Agricultural Biotechnology Study</h3>
+
+            <p>
+                Exploring how biotechnology and genetic engineering can
+                contribute to improved crop characteristics, agricultural
+                productivity and sustainable farming.
+            </p>
+
+        </div>
+
+        <div class="project">
+
+            <h3>🔬 Molecular Biology Research Interest</h3>
+
+            <p>
+                Exploring DNA, RNA, genes, proteins and molecular mechanisms
+                as a foundation for future research in biotechnology.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section id="education">
+
+        <div class="section-title">
+            <h2>Education</h2>
+            <p>Academic background</p>
+        </div>
+
+        <div class="education">
+
+            <div class="education-item">
+
+                <h3>B.Tech – Information Technology</h3>
+
+                <p>
+                    <strong>Andhra Loyola Institute of Engineering and Technology
+                    (ALIET)</strong>
+                </p>
+
+                <p>
+                    Currently pursuing undergraduate studies.
+                </p>
+
+            </div>
+
+            <div class="education-item">
+
+                <h3>Future Specialization</h3>
+
+                <p>
+                    Genetic Engineering • Biotechnology • Molecular Biology
+                    • Genetic Research
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <div class="section-title">
+
+            <h2>Let's Connect</h2>
+
+            <p>
+                Interested in biotechnology, genetic engineering and
+                scientific research.
+            </p>
+
+        </div>
+
+        <p>
+            📧 Email:
+            <a href="mailto:yourmail@example.com">
+                yourmail@example.com
+            </a>
+        </p>
+
+        <p>
+            📱 Phone: +91 XXXXX XXXXX
+        </p>
+
+        <p>
+            📍 Location: Andhra Pradesh, India
+        </p>
+
+        <p>
+            🔗 LinkedIn:
+            <a href="#" target="_blank">
+                Your LinkedIn Profile
+            </a>
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 K. Devi Charan | Genetic Engineering & Biotechnology
+        </p>
+
+    </footer>
+
+</body>
+</html>
